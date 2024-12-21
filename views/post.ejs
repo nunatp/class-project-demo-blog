@@ -1,0 +1,80 @@
+<script src="node_modules/lodash/lodash.min.js"></script> <!-- นำเข้า lodash library สำหรับใช้ในหน้าเว็บ -->
+
+<%- include("partials/header"); -%> <!-- รวมไฟล์ header.ejs (ใช้ EJS syntax) -->
+
+    <body>
+        <section class="single-block-wrapper section-padding"> <!-- ส่วนหลักของโพสต์ที่มีการจัดวางด้วย padding -->
+            <div class="container"> <!-- ใช้ container เพื่อจัดการขนาดและตำแหน่งของเนื้อหา -->
+                <div class="row"> <!-- ใช้ row เพื่อจัดเรียงเนื้อหาเป็นแถว -->
+                    <div class="single-post"> <!-- กล่องโพสต์เดียว -->
+
+                        <div class="post-header mb-5 text-center"> <!-- หัวข้อของโพสต์ที่จัดกลาง -->
+                            <div class="meta-cat">
+                                <a class="post-category font-extra text-color text-uppercase font-sm letter-spacing-1"
+                                    href="#">
+                                    <%= subject %> <!-- แสดงหัวข้อของโพสต์ -->
+                                </a>
+                            </div>
+                            <h2 class="post-title mt-2">
+                                <%= title %> <!-- แสดงชื่อของโพสต์ -->
+                            </h2>
+                            <div class="post-meta">
+                                <span class="text-uppercase font-sm letter-spacing-1 mr-3">by 65160024, </span>
+                                <span class="text-uppercase font-sm letter-spacing-1">
+                                    <script>
+                                        var currentDate = new Date(); // สร้างออบเจ็กต์ Date สำหรับวันที่ปัจจุบัน
+                                        var date = currentDate.getDate() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getFullYear(); // สร้างสตริงวันที่
+                                        document.write(date); // แสดงวันที่ในเอกสาร
+                                    </script>
+                                </span>
+                            </div>
+                            <!-- ปุ่ม Edit เชื่อมโยงไปยังหน้าแก้ไขโพสต์ -->
+                            <a href="/edit/<%= (title) %>">
+                                <button class="btn btn-primary" type="submit" name="button">Edit</button>
+                            </a>
+                            <!-- ปุ่ม Delete เชื่อมโยงไปยังเส้นทางลบโพสต์ -->
+                            <a href="/delete/<%= (title) %>">
+                                <!-- ปุ่มลบที่เชื่อมโยงไปยังเส้นทางลบโพสต์ -->
+                                <button class="btn btn-primary" type="button" name="button"
+                                    onclick="confirmDelete()">Delete</button>
+
+                                <!-- สคริปต์สำหรับการยืนยันการลบโพสต์ -->
+                                <script>
+                                    function confirmDelete() {
+                                        Swal.fire({
+                                            title: 'Are you sure?', // ข้อความยืนยัน
+                                            text: 'You won\'t be able to revert this!', // ข้อความเพิ่มเติม
+                                            icon: 'warning', // ไอคอนแจ้งเตือน
+                                            showCancelButton: true, // แสดงปุ่มยกเลิก
+                                            confirmButtonColor: '#3085d6', // สีปุ่มยืนยัน
+                                            cancelButtonColor: '#d33', // สีปุ่มยกเลิก
+                                            confirmButtonText: 'Yes, delete it!' // ข้อความปุ่มยืนยัน
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                // ถ้าผู้ใช้คลิก "Yes," จะเปลี่ยนเส้นทางไปยังลบโพสต์
+                                                window.location.href = '/delete/<%= (title) %>';
+                                            }
+                                        });
+                                    }
+                                </script>
+
+                            </a>
+                        </div>
+
+                        <div class="post-body"> <!-- เนื้อหาหลักของโพสต์ -->
+                            <div class="entry-content">
+                                <p>
+                                    <%= content %> <!-- แสดงเนื้อหาของโพสต์ -->
+                                </p>
+                            </div>
+                        </div> <!-- end post-body -->
+                        <button class="btn btn-dark btn-block" onclick="window.location.href='/'">Back to Blog</button>
+                        <!-- ปุ่มกลับไปยังหน้าแรกของบล็อก -->
+
+                    </div> <!-- end single post -->
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+    </body>
+
+    <%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs (ใช้ EJS syntax) -->

@@ -1,0 +1,42 @@
+<%- include("partials/header"); -%> <!-- รวมไฟล์ header.ejs (ใช้ EJS syntax) -->
+
+    <section class="section-padding pt-4"> <!-- ส่วนหลักของหน้า, เพิ่ม padding ที่ด้านบน -->
+        <div class="container"> <!-- ใช้ container เพื่อจัดการขนาดและตำแหน่งของเนื้อหา -->
+            <div class="row"> <!-- ใช้ row เพื่อจัดเรียงเนื้อหาเป็นแถว -->
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                    <article class="post-grid mb-2"> <!-- กล่องสำหรับโพสต์ -->
+                        <a class="post-thumb mb-4 d-block" href="blog-single.html"> <!-- ลิงก์สำหรับภาพพรีวิวโพสต์ -->
+                            <img src="images/fashion/bg-fashion.jpg" alt="" class="img-fluid w-100">
+                            <!-- แสดงภาพพรีวิวของโพสต์ -->
+                        </a>
+
+                        <% posts.forEach(function(post) { %> <!-- วนลูปเพื่อแสดงโพสต์ทั้งหมด -->
+                            <h2 class="mb-1 mt-2 post-title"> <!-- ชื่อโพสต์ -->
+                                <a href="/posts/<%= encodeURIComponent(post.title) %>">
+                                    <!-- ลิงก์ไปยังหน้ารายละเอียดโพสต์ -->
+                                    <%= post.title %> <!-- แสดงชื่อโพสต์ -->
+                                </a>
+                            </h2>
+
+                            <span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">
+                                <!-- ข้อมูลเพิ่มเติมเกี่ยวกับโพสต์ -->
+                                <%= post.subject ? post.subject : 'Uncategorized' %>
+                                    <!-- แสดงหัวข้อโพสต์ หรือ 'Uncategorized' หากไม่มีหัวข้อ -->
+                            </span>
+
+                            <div class="post-content mt-4 pb-5"> <!-- เนื้อหาของโพสต์ -->
+                                <p>
+                                    <%= post.content.substring(0, 100) + " ..." %>
+                                        <!-- แสดงเนื้อหาครึ่งหนึ่งของโพสต์ (ไม่เกิน 100 ตัวอักษร) และเพิ่ม "..." -->
+                                        <a class="read-more" href="/posts/<%= encodeURIComponent(post.title) %>">Read
+                                            More</a> <!-- ลิงก์ไปยังหน้ารายละเอียดโพสต์ -->
+                                </p>
+                            </div>
+                            <% }); %> <!-- สิ้นสุดการวนลูป -->
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs (ใช้ EJS syntax) -->

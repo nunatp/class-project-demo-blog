@@ -1,0 +1,72 @@
+<%- include("partials/header"); -%> <!-- รวมไฟล์ header.ejs เพื่อแสดงส่วนหัวของหน้าเว็บ -->
+
+    <div class="breadcrumb-wrapper"> <!-- สร้างแถบเส้นทาง (breadcrumb) สำหรับการนำทาง -->
+        <div class="container"> <!-- ใช้ container เพื่อจัดการขนาดและตำแหน่งของเนื้อหา -->
+            <div class="row"> <!-- ใช้ row เพื่อจัดเรียงเนื้อหาเป็นแถว -->
+                <div class="col-sm-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                    <div class="text-center"> <!-- จัดเนื้อหาให้อยู่ตรงกลาง -->
+                        <h1 class="lg-title"> <!-- หัวข้อใหญ่ของหน้า -->
+                            <%= title %> <!-- แสดงชื่อหัวข้อที่ได้รับจากตัวแปร title -->
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pt-5 padding-bottom"> <!-- ส่วนหลักของเนื้อหา เพิ่ม padding ที่ด้านบนและด้านล่าง -->
+        <div class="container"> <!-- ใช้ container เพื่อจัดการขนาดและตำแหน่งของเนื้อหา -->
+            <div class="row"> <!-- ใช้ row เพื่อจัดเรียงเนื้อหาเป็นแถว -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                    <div class="row"> <!-- ใช้ row เพื่อจัดเรียงเนื้อหาเป็นแถว -->
+                        <div style="display: flex; justify-content: center;"> <!-- จัดการการจัดวางภาพให้ตรงกลาง -->
+                            <img src="images/1.jpg" alt="" class="img-fluid" style="width: 200px;">
+                            <!-- แสดงภาพขนาด 200px -->
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mt-5">
+                        <!-- จัดเรียงเนื้อหาให้อยู่ตรงกลางและเพิ่ม margin-top -->
+                        <div class="col-lg-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                            <div class="row"> <!-- ใช้ row เพื่อจัดเรียงเนื้อหาเป็นแถว -->
+                                <div class="col-lg-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                                    <h5 class="text-uppercase letter-spacing mb-4">Who am I?</h5> <!-- หัวข้อย่อย -->
+                                    <p>Hello! I'm Nuna, a dedicated student with a passion for learning and exploration.
+                                        I am currently studying at the
+                                        Faculty of Informatics at Burapha University, and my student ID is 65160024.
+                                        With a strong interest in computer
+                                        science, particularly web development, I am constantly developing my skills and
+                                        expanding my knowledge in the
+                                        digital world.</p> <!-- ข้อความเกี่ยวกับตัวเอง -->
+                                </div>
+                                <div class="col-lg-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                                    <h5 class="text-uppercase letter-spacing mb-4">MY VISION</h5> <!-- หัวข้อย่อย -->
+                                    <p>My vision is to grow both personally and professionally. I believe in embracing
+                                        all aspects of life, from
+                                        technology to personal wellness, and in striving to be the best version of
+                                        myself. I aim to overcome challenges,
+                                        learn new skills, and continuously improve in every area of life.</p>
+                                    <!-- ข้อความเกี่ยวกับวิสัยทัศน์ -->
+                                </div>
+                                <div class="col-lg-12"> <!-- ใช้คอลัมน์สำหรับการจัดวางในกริด -->
+                                    <h5 class="text-uppercase letter-spacing mb-4">What I like to do?</h5>
+                                    <!-- หัวข้อย่อย -->
+                                    <p> My interests are broad, ranging from web development to maintaining a balanced
+                                        lifestyle. I love staying active,
+                                        learning about fitness and health, and applying that knowledge to my daily
+                                        routine. I am also deeply passionate
+                                        about web development, where I enjoy solving problems and creating innovative
+                                        digital experiences. As a student
+                                        in the field of informatics, I am committed to learning new technologies and
+                                        staying up-to-date with the
+                                        fast-paced world of IT.</p> <!-- ข้อความเกี่ยวกับสิ่งที่สนใจ -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs เพื่อแสดงส่วนท้ายของหน้าเว็บ -->

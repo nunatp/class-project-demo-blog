@@ -1,0 +1,29 @@
+<%- include("partials/header"); -%> <!-- รวมไฟล์ header.ejs เพื่อแสดงส่วนหัวของหน้าเว็บ -->
+
+    <h1>Create a post</h1> <!-- แสดงหัวข้อของหน้าเป็น "Create a post" -->
+
+    <!-- ฟอร์มสำหรับการสร้างโพสต์ใหม่ -->
+    <form action="/compose" method="post"> <!-- ฟอร์มที่ส่งข้อมูลไปยังเส้นทาง /compose โดยใช้ HTTP POST method -->
+        <div class="form-group"> <!-- กลุ่มฟอร์มสำหรับการจัดการฟิลด์ต่างๆ -->
+
+            <!-- ฟิลด์ Subject -->
+            <label>Subject</label> <!-- แสดงป้ายชื่อของฟิลด์ Subject -->
+            <input class="form-control" type="text" name="postSubject"> <!-- ฟิลด์สำหรับกรอกหัวข้อของโพสต์ -->
+
+            <!-- ฟิลด์ Title -->
+            <label>Title</label> <!-- แสดงป้ายชื่อของฟิลด์ Title -->
+            <input class="form-control" type="text" name="postTitle"> <!-- ฟิลด์สำหรับกรอกชื่อของโพสต์ -->
+
+            <!-- ฟิลด์ Content -->
+            <label>Post</label> <!-- แสดงป้ายชื่อของฟิลด์ Content -->
+            <textarea class="form-control" name="postBody" rows="8" cols="80"></textarea>
+            <!-- ฟิลด์สำหรับกรอกเนื้อหาของโพสต์ โดยมีแถว 8 แถวและคอลัมน์ 80 คอลัมน์ -->
+
+        </div>
+        <!-- ปุ่มสำหรับเผยแพร่โพสต์ -->
+        <button class="btn btn-primary" type="submit" name="button">submit</button>
+        <!-- ปุ่มที่ส่งข้อมูลฟอร์มไปยังเซิร์ฟเวอร์เมื่อคลิก -->
+
+    </form>
+
+    <%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs เพื่อแสดงส่วนท้ายของหน้าเว็บ -->

@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%> <!-- รวมไฟล์ header.ejs เพื่อแสดงส่วนหัวของหน้าเว็บ -->
+
+    <h1>Edit Post</h1> <!-- แสดงหัวข้อของหน้าเป็น "Edit Post" -->
+
+    <!-- ฟอร์มสำหรับการแก้ไขโพสต์ -->
+    <form action="/edit/<%= post.title %>" method="post">
+        <!-- ฟอร์มส่งข้อมูลไปยังเส้นทาง /edit/:postTitle โดยใช้ method "post" -->
+        <div class="form-group"> <!-- กลุ่มฟอร์มสำหรับการจัดการฟิลด์ต่างๆ -->
+
+            <!-- ฟิลด์ Subject -->
+            <label for="postSubject">Subject:</label> <!-- แสดงป้ายชื่อของฟิลด์ Subject -->
+            <input class="form-control" type="text" id="postSubject" name="postSubject" value="<%= post.subject %>"
+                required> <!-- ฟิลด์สำหรับกรอกหัวข้อของโพสต์ -->
+            <br>
+
+            <!-- ฟิลด์ Title -->
+            <label for="postTitle">Title:</label> <!-- แสดงป้ายชื่อของฟิลด์ Title -->
+            <input class="form-control" type="text" id="postTitle" name="postTitle" value="<%= post.title %>" required>
+            <!-- ฟิลด์สำหรับกรอกชื่อของโพสต์ -->
+            <br>
+
+            <!-- ฟิลด์ Content -->
+            <label for="postBody">Content:</label> <!-- แสดงป้ายชื่อของฟิลด์ Content -->
+            <textarea class="form-control" id="postBody" name="postBody" rows="10"
+                required><%= post.content %></textarea> <!-- ฟิลด์สำหรับกรอกเนื้อหาของโพสต์ -->
+            <br>
+
+            <!-- ปุ่มสำหรับบันทึกการเปลี่ยนแปลง -->
+            <button class="btn btn-primary" type="submit">Save Changes</button>
+            <!-- ปุ่มที่ส่งข้อมูลฟอร์มไปยังเซิร์ฟเวอร์เมื่อคลิก -->
+
+        </div>
+    </form>
+
+    <%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs เพื่อแสดงส่วนท้ายของหน้าเว็บ -->
