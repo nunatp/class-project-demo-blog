@@ -1,29 +1,35 @@
 <%- include("partials/header"); -%> <!-- รวมไฟล์ header.ejs เพื่อแสดงส่วนหัวของหน้าเว็บ -->
 
-    <h1>Create a post</h1> <!-- แสดงหัวข้อของหน้าเป็น "Create a post" -->
-
+<div class="container">
+    <h1 class="text-center my-4">Create a Post</h1> <!-- หัวข้อที่แสดงอยู่กลางหน้ากับเว้นช่องว่าง -->
+    
     <!-- ฟอร์มสำหรับการสร้างโพสต์ใหม่ -->
-    <form action="/compose" method="post"> <!-- ฟอร์มที่ส่งข้อมูลไปยังเส้นทาง /compose โดยใช้ HTTP POST method -->
-        <div class="form-group"> <!-- กลุ่มฟอร์มสำหรับการจัดการฟิลด์ต่างๆ -->
-
+    <form action="/compose" method="post">
+        <div class="form-group">
             <!-- ฟิลด์ Subject -->
-            <label>Subject</label> <!-- แสดงป้ายชื่อของฟิลด์ Subject -->
-            <input class="form-control" type="text" name="postSubject"> <!-- ฟิลด์สำหรับกรอกหัวข้อของโพสต์ -->
-
-            <!-- ฟิลด์ Title -->
-            <label>Title</label> <!-- แสดงป้ายชื่อของฟิลด์ Title -->
-            <input class="form-control" type="text" name="postTitle"> <!-- ฟิลด์สำหรับกรอกชื่อของโพสต์ -->
-
-            <!-- ฟิลด์ Content -->
-            <label>Post</label> <!-- แสดงป้ายชื่อของฟิลด์ Content -->
-            <textarea class="form-control" name="postBody" rows="8" cols="80"></textarea>
-            <!-- ฟิลด์สำหรับกรอกเนื้อหาของโพสต์ โดยมีแถว 8 แถวและคอลัมน์ 80 คอลัมน์ -->
-
+            <label for="postSubject">Subject</label>
+            <input class="form-control" type="text" name="postSubject" id="postSubject" required>
+            <!-- ฟิลด์สำหรับกรอกหัวข้อของโพสต์ -->
         </div>
+
+        <div class="form-group">
+            <!-- ฟิลด์ Title -->
+            <label for="postTitle">Title</label>
+            <input class="form-control" type="text" name="postTitle" id="postTitle" required>
+            <!-- ฟิลด์สำหรับกรอกชื่อของโพสต์ -->
+        </div>
+
+        <div class="form-group">
+            <!-- ฟิลด์ Content -->
+            <label for="postBody">Post</label>
+            <textarea class="form-control" name="postBody" id="postBody" rows="8" required></textarea>
+            <!-- ฟิลด์สำหรับกรอกเนื้อหาของโพสต์ -->
+        </div>
+
         <!-- ปุ่มสำหรับเผยแพร่โพสต์ -->
-        <button class="btn btn-primary" type="submit" name="button">submit</button>
+        <button class="btn btn-primary btn-block my-4" type="submit">Submit</button>
         <!-- ปุ่มที่ส่งข้อมูลฟอร์มไปยังเซิร์ฟเวอร์เมื่อคลิก -->
-
     </form>
+</div>
 
-    <%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs เพื่อแสดงส่วนท้ายของหน้าเว็บ -->
+<%- include("partials/footer"); -%> <!-- รวมไฟล์ footer.ejs เพื่อแสดงส่วนท้ายของหน้าเว็บ -->

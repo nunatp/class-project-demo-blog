@@ -111,10 +111,10 @@ app.get("/delete/:postName", function (req, res) {
     return _.lowerCase(post.title) !== requestedTitle; // กรองโพสต์ที่ไม่ตรงกับชื่อที่ต้องการลบ
   });
 
-  res.redirect("/"); // เปลี่ยนเส้นทางไปยังหน้าแรก
+  res.redirect("/");// เปลี่ยนเส้นทางไปยังหน้าแรก
 });
 
-// เริ่มต้นเซิร์ฟเวอร์ที่พอร์ต 3000
+
 app.listen(port, () => {
-  console.log(`Server starting on port ${port}`); // แสดงข้อความว่าเซิร์ฟเวอร์เริ่มทำงาน
+  console.log(`Server starting on port ${port}`);
 });

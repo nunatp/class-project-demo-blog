@@ -1,26 +1,172 @@
+/* ตั้งค่าพื้นฐาน */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4; /* สีพื้นหลังของหน้า */
+  color: #333; /* สีของข้อความ */
+  line-height: 1.6; /* เพิ่มระยะห่างระหว่างบรรทัด */
+  margin: 0;
+  padding: 0;
 }
 
-header {
-    margin-bottom: 20px;
+/* Navbar */
+.navbar {
+  background-color: #007BFF; /* สีพื้นหลังของ navbar */
+  border-radius: 0; /* ทำให้มุมเป็นเหลี่ยม */
+  margin-bottom: 20px; /* ช่องว่างด้านล่าง navbar */
 }
 
-footer {
-    margin-top: 40px;
+.navbar-header .navbar-brand {
+  color: white; /* สีตัวอักษรในชื่อแบรนด์ */
+  font-size: 50px;
+  font-weight: bold;
 }
 
+.navbar .navbar-nav li a {
+  color: white; /* สีลิงค์ */
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+.navbar .navbar-nav li a:hover {
+  background-color: #0056b3; /* สีพื้นหลังเมื่อ hover */
+  color: #fff; /* เปลี่ยนสีข้อความเมื่อ hover */
+}
+
+.navbar .navbar-nav li.active a {
+  background-color: #004085; /* สีพื้นหลังของลิงค์ที่ถูกเลือก */
+}
+
+/* ปรับให้ navbar ยืดหยุ่นสำหรับขนาดหน้าจอ */
+@media (max-width: 767px) {
+  .navbar-nav {
+      text-align: center;
+  }
+
+  .navbar-nav li {
+      margin: 10px 0;
+  }
+}
+
+/* ตัว container */
 .container {
-    max-width: 960px;
-    margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: white; /* สีพื้นหลังภายใน container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เงาเล็กๆ รอบๆ container */
+  border-radius: 8px; /* มุมมน */
 }
 
-.post-form, .list-group-item {
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* ตั้งค่าให้ text ในหน้าเว็บดูดี */
+h1, h2, h3, h4, h5, h6 {
+  color: #333; /* สีหัวข้อ */
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px; /* ขนาดฟอนต์ของข้อความ */
+  color: #555; /* สีของข้อความ */
+  margin-bottom: 20px; /* ระยะห่างระหว่างย่อหน้า */
+}
+
+/* สไตล์ของลิงค์ */
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ hover */
+  color: #0056b3;
+}
+
+/* เพิ่มสไตล์ให้กับปุ่ม */
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea.form-control {
+  resize: vertical; /* อนุญาตให้ปรับขนาด textarea แนวตั้ง */
+}
+
+button[type="submit"] {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #007BFF; /* ปรับสีพื้นหลังปุ่ม */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* ปรับสีปุ่มเมื่อ hover */
+}
+
+/* Footer padding */
+.footer-padding {
+  height: 20px; /* เพิ่มพื้นที่ก่อน footer */
+}
+
+/* Footer style */
+.footer {
+  background-color: #333; /* สีพื้นหลังของ footer */
+  color: white; /* สีตัวอักษรใน footer */
+  padding: 500px; /* ช่องว่างภายใน */
+  text-align: center; /* จัดข้อความให้กลาง */
+  position: relative; /* ให้ footer อยู่ที่ตำแหน่งธรรมดา */
+  bottom: 0;
+  width: 100%;
+  display: flex; /* ใช้ flexbox เพื่อจัดตำแหน่ง */
+  justify-content: center; /* จัดข้อความให้อยู่กลางในแนวนอน */
+  align-items: center; /* จัดข้อความให้อยู่กลางในแนวตั้ง */
+  height: 100px; /* กำหนดความสูงของ footer */
+}
+
+/* ปรับข้อความใน footer */
+.footer p {
+  margin: 0;
+  font-size: 14px; /* ขนาดตัวอักษร */
+  line-height: 1.6;
+}
+
+/* ปรับลิงค์ใน footer */
+.footer a {
+  color: #007BFF; /* สีของลิงค์ */
+  text-decoration: none; /* เอาเส้นใต้ลิงค์ออก */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ hover */
+  color: #0056b3; /* สีของลิงค์เมื่อ hover */
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  .footer p {
+      font-size: 12px; /* ลดขนาดข้อความลงบนหน้าจอเล็ก */
+  }
 }
